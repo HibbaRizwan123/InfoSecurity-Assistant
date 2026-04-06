@@ -175,12 +175,14 @@ st.markdown(
 # --- Session State ---
 if "query" not in st.session_state:
     st.session_state.query = ""
-if "clear" not in st.session_state:
-    st.session_state.clear_input = False
+if "input_box" not in st.session_state:
+    st.session_state.input_box = ""
 
 def submit():
-    st.session_state.query = st.session_state.input_box
-    st.session_state.input_box = ""
+    # Only set query if input_box has content
+    if st.session_state.input_box.strip():
+        st.session_state.query = st.session_state.input_box
+        st.session_state.input_box = ""
 
 # --- Input Section ---
 col1, col2 = st.columns([14, 1])
@@ -199,14 +201,10 @@ with col2:
 
 
 # --- Answer Section ---
-if ask_button or st.session_state.query:
-    if st.session_state.query.strip():
-        with st.spinner("Searching PDFs and generating answer..."):
-            response = query_rag(st.session_state.query)
-        st.session_state.query = ""
+if st.session_state.query.strip():
+    with st.spinner("Searching PDFs and generating answer..."):
+        response = query_rag(st.session_state.query)
+    st.session_state.query = ""
 
-        st.divider()
-        st.markdown(response)
-
-    else:
-        st.warning("Please enter a question before clicking Ask!")
+    st.divider()
+    st.markdown(response)
