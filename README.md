@@ -3,11 +3,10 @@ InfoSecurity Assistant is a RAG-based question answer application designed to an
 
 ## 🎯 Problem Statement
 Information Security is a theoratical subject where concepts are spread across *multiple files*. Whenever I needed to find information about a specific topic,
-I had to manually search through *different course files* one by one which was extremely time-consuming and inefficient.
+I had to manually search through *different course files* one by one which was extremely time-consuming and inefficient. Moreover, some important topics contain very limited explanation.
 
 ## 💡 Problem Solution
-To cater this problem, I have developed a RAG-based question & answer application named **InfoSecurity Assistant** which act as an intelligent study companion that instantly retrieves and answers questions from all 
-course materials at once saving time and making studying more efficient by keeping my notes as primary source. I used a hybrid approach to answer any question **e.g., if user asked question from a topic that is briefly explained in my notes my application will be able to explain it in more detail**.
+To cater this problem, I have developed a RAG-based question & answer application named **InfoSecurity Assistant** which act as an intelligent study companion that instantly retrieves and answers questions from all course materials at once saving time and making studying more efficient by keeping my notes as primary source. I used a hybrid approach to answer any question **e.g., if user asked question from a topic that is briefly explained in my notes my application will be able to explain it in more detail**.
 
 ## ✨ Features
 - 💬 Ask questions through a clean chat interface
